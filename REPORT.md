@@ -38,6 +38,11 @@ negative, thickness = strength):
 
 ![Network wiring](assets/network.png)
 
+And the forward pass made visible — one real decision, with firing neurons bright
+and ReLU-silenced ones dark (each edge carries `activation × weight`):
+
+![Neurons firing](assets/activation.png)
+
 **The opponent.** A scripted bot (`pong.py`) that follows the ball's height at
 **70% of paddle speed (2.1 u/step)**. Beatable in principle, but a strong tracker.
 

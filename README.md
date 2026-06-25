@@ -27,6 +27,20 @@ Regenerate it for any saved model:
 python visualize_network.py --model champion_rl_v4.npz --out assets/network.png
 ```
 
+### Watch a decision happen
+
+![Neurons firing](assets/activation.gif)
+
+Feed one game state in and run the forward pass: **bright** hidden neurons are
+firing, **dark** ones were silenced to zero by ReLU, and each edge glows with the
+signal it carries (`activation × weight`). You can watch the network *use*
+different neurons as the ball moves — and the highlighted action flip. Make your own:
+
+```bash
+python visualize_activation.py --model champion_rl_v4.npz --out assets/activation.png            # one decision
+python visualize_activation.py --model champion_rl_v4.npz --out assets/activation.gif --animate   # animated
+```
+
 ## What you'll learn
 
 - **What a neural network actually is** — `network.py` builds one from scratch: weights, biases, activations, forward pass. No PyTorch hiding the math.
