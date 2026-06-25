@@ -12,6 +12,21 @@ The network learns to **rally** from scratch (above — an 8-hit exchange, never
 missing). For the full analysis — how it learns, why scoring against the bot is
 hard, and the reward-shaping journey — see **[REPORT.md](REPORT.md)**.
 
+## How the network connects
+
+![Network wiring](assets/network.png)
+
+Each neuron is a node; each weight is an edge. **Teal** connections excite the
+next neuron, **coral** inhibit it, and thickness is the strength — the very
+"how much this neuron cares about that input" idea, made visible. This is the
+actual trained `[5, 16, 3]` champion (every input is wired to every hidden
+neuron, every hidden neuron to every output — a *fully connected* network).
+Regenerate it for any saved model:
+
+```bash
+python visualize_network.py --model champion_rl_v4.npz --out assets/network.png
+```
+
 ## What you'll learn
 
 - **What a neural network actually is** — `network.py` builds one from scratch: weights, biases, activations, forward pass. No PyTorch hiding the math.

@@ -32,6 +32,12 @@ The 5 inputs are the normalized game state (ball x/y, ball vx/vy, paddle y). The
 the agent plays the `argmax`. Forward pass *and* backpropagation are written by
 hand in `train_rl.py` — no autograd.
 
+The champion's actual learned wiring — every input connected to every hidden
+neuron, every hidden neuron to every output (teal = positive weight, coral =
+negative, thickness = strength):
+
+![Network wiring](assets/network.png)
+
 **The opponent.** A scripted bot (`pong.py`) that follows the ball's height at
 **70% of paddle speed (2.1 u/step)**. Beatable in principle, but a strong tracker.
 
