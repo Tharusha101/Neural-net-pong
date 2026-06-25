@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# training logs and throwaway analysis
+*.log
+
+# trained models: ignore by default, but ship the two featured champions
+*.npz
+!champion_rl_v4.npz
+!champion_rl_big.npz
